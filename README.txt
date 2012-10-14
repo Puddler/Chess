@@ -1,0 +1,1 @@
+First attempt at a chess algorithm
