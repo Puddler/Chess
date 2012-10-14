@@ -1,0 +1,190 @@
+﻿<Window x:Class="Chess.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chess" Height="800" Width="1000" WindowStartupLocation="CenterOwner"
+        xmlns:UI="clr-namespace:Chess.UI" Background="Black" Icon="{Binding Icon}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="New Game" Command="{Binding ResetBoardCommand}" />
+            <Button Grid.Column="1" Content="←" Command="{Binding PreviousCommand}" />
+            <Label Grid.Column="2" Content="{Binding CurrentPlayer.Team}" FontSize="14" Foreground="Red" />
+            <Label Grid.Column="3" Content="{Binding CurrentPlayer.KingStatus}" FontSize="14" Foreground="Red" />
+            <Button Grid.Column="4" Content="→" Command="{Binding NextCommand}" />
+            
+        </Grid>
+
+        <UI:BoardUI Grid.Column="1" Grid.Row="1" Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}" HorizontalAlignment="Left" VerticalAlignment="Stretch" />
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ListBox Grid.Column="0" Grid.Row="0" ItemsSource="{Binding White.Moves}" SelectedItem="{Binding White.CurrentMove}" Background="Gray">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightSkyBlue" />
+                </ListBox.Resources>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" Height="45" VerticalAlignment="Top" Source="{Binding StartPosition.Piece.Image}" />
+                            <Label Grid.Column="1" Content="{Binding AsString}" VerticalAlignment="Bottom" Foreground="Navy" FontSize="12" FontWeight="Bold" />
+                            <Image Grid.Column="2" Height="45" VerticalAlignment="Top" Source="{Binding EndPosition.Piece.Image}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ListBox Grid.Column="0" Grid.Row="0" ItemsSource="{Binding Black.Moves}" SelectedItem="{Binding Black.CurrentMove}" Background="Gray" >
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightSkyBlue" />
+                </ListBox.Resources>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" Height="45" VerticalAlignment="Top" Source="{Binding StartPosition.Piece.Image}" />
+                            <Label Grid.Column="1" Content="{Binding AsString}" VerticalAlignment="Bottom" Foreground="Navy" FontSize="12" FontWeight="Bold" />
+                            <Image Grid.Column="2" Height="45" VerticalAlignment="Top" Source="{Binding EndPosition.Piece.Image}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <!--<Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ListBox Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Gray" ItemsSource="{Binding CapturedWhiteMaterials}" Background="Black">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                                   ItemWidth="{Binding (ListView.View).ItemWidth, RelativeSource={RelativeSource AncestorType=ListView}}"
+                                   MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                                   ItemHeight="{Binding (ListView.View).ItemHeight, RelativeSource={RelativeSource AncestorType=ListView}}"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Image Height="85" Source="{Binding Image}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ListBox VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2"  BorderBrush="Gray" ItemsSource="{Binding CapturedBlackMaterials}" Background="Black">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                                   ItemWidth="{Binding (ListView.View).ItemWidth, RelativeSource={RelativeSource AncestorType=ListView}}"
+                                   MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                                   ItemHeight="{Binding (ListView.View).ItemHeight, RelativeSource={RelativeSource AncestorType=ListView}}"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Image Height="85" Source="{Binding Image}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid >-->
+        
+        <!--<ListBox Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Margin="5,0,0,0" BorderBrush="Gray" Background="Black" ItemsSource="{Binding WhiteMoves}" SelectedItem="{Binding CurrentWhiteMove}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Content="{Binding AsString}" Foreground="White" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="DarkGreen"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="DarkGreen" />
+                    </Style.Resources>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <ListBox Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Margin="5,0,0,0" BorderBrush="Gray" Background="Black" ItemsSource="{Binding BlackMoves}" SelectedItem="{Binding CurrentBlackMove}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>                    
+                        <Label Content="{Binding AsString}"  Foreground="White" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="DarkGreen"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="DarkGreen" />
+                    </Style.Resources>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>-->
+        
+    </Grid>
+</Window>

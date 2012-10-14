@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="Chess.UI.BoardUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:UI="clr-namespace:Chess.UI">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>  
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--RANK 1-->
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="0" File="A" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="1" File="B" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="2" File="C" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="3" File="D" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="4" File="E" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="5" File="F" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="6" File="G" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="7" Grid.Column="7" File="H" Rank="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 2-->
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="0" File="A" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="1" File="B" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="2" File="C" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="3" File="D" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="4" File="E" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="5" File="F" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="6" File="G" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="6" Grid.Column="7" File="H" Rank="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 3-->
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="0" File="A" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="1" File="B" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="2" File="C" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="3" File="D" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="4" File="E" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="5" File="F" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="6" File="G" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="5" Grid.Column="7" File="H" Rank="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 4-->
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="0" File="A" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="1" File="B" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="2" File="C" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="3" File="D" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="4" File="E" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="5" File="F" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="6" File="G" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="4" Grid.Column="7" File="H" Rank="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 5-->
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="0" File="A" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="1" File="B" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="2" File="C" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="3" File="D" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="4" File="E" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="5" File="F" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="6" File="G" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="3" Grid.Column="7" File="H" Rank="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 6-->
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="0" File="A" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="1" File="B" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="2" File="C" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="3" File="D" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="4" File="E" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="5" File="F" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="6" File="G" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="2" Grid.Column="7" File="H" Rank="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 7-->
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="0" File="A" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="1" File="B" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="2" File="C" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="3" File="D" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="4" File="E" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="5" File="F" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="6" File="G" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="1" Grid.Column="7" File="H" Rank="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!--RANK 8-->
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="0" File="A" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="1" File="B" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="2" File="C" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="3" File="D" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="4" File="E" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="5" File="F" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="6" File="G" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <UI:BoardSquareUI Grid.Row="0" Grid.Column="7" File="H" Rank="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+    </Grid>
+</UserControl>
